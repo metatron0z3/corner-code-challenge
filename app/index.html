@@ -13,8 +13,30 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      var availablePositions = [
+        "Accounting Associate",
+        "Accounting Manager",
+        "Accounting Director",
+        "Beta Tester",
+        "Budget Analyst",
+        "Copy Editor",
+        "Director of HR",
+        "Education Counselor",
+        "Frontend Engineer",
+        "Software Engineer"
+      ];
+      $( "#jobs" ).autocomplete({
+        source: availablePositions
+      });
+    } );
+    </script>
   </head>
-  <body ng-app="test1App">
+  <body ng-app="cornerCodeChallengeApp">
 
     <div class="container flex-column" ng-controller="MainCtrl">
         <div ng-view="">

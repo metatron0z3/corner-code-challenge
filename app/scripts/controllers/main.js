@@ -2,18 +2,17 @@
 
 /**
  * @ngdoc function
- * @name test1App.controller:MainCtrl
+ * @name cornerCodeChallengeApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the test1App
+ * Controller of the cornerCodeChallengeApp
  */
-angular.module('test1App')
+angular.module('cornerCodeChallengeApp')
 
-  .config(function ($httpProvider) {
-    $httpProvider.defaults.headers.common = {};
-    $httpProvider.defaults.headers.post = {};
-    $httpProvider.defaults.headers.put = {};
-    $httpProvider.defaults.headers.patch = {};
+  .config(function($httpProvider) {
+    $httpProvider.defaults.useXDomain = true;
+    $httpProvider.defaults.headers.common['Access-Control-Allow-Headers'] = '*';
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
   })
 
   .factory('instagram', ['$http',
@@ -21,47 +20,57 @@ angular.module('test1App')
       return {
         fetchFeed: function() {
 
-          // var config =
+          var endPoint = "https://www.instagram.com/JoinCornerstone/media";
 
-          // var endPoint = "https://www.instagram.com/JoinCornerstone/media";
-          //
-          // $http.jsonp(endPoint).success(function(response) {
-          //   callback(response.data);
-          // })
-          // .error(function(xhr, status, err) {
-          //   console.error(status, err);
-          // });
-
-          $http({
-            method: 'GET',
-            url: 'https://www.instagram.com/JoinCornerstone/media',
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              "Access-Control-Allow-Headers": "X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Authorization",
-              "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
-            }
+          $http.jsonp(endPoint).success(function(response) {
+            callback(response.data);
           })
-          .then(function success(response) {
-            console.log('response')
-            console.log(response)
-
-          }, function error(error) {
-              console.log('error')
-              console.log(error)
-
+          .error(function(xhr, status, err) {
+            console.error(status, err);
           });
+
+          // $http({
+          //   method: 'GET',
+          //   url: 'https://www.instagram.com/JoinCornerstone/media',
+          //   headers: {
+          //     "Access-Control-Allow-Origin": "*",
+          //     "Access-Control-Allow-Headers": "X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Authorization",
+          //     "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
+          //   }
+          // })
+          // .then(function success(response) {
+          //   console.log('response')
+          //   console.log(response)
+          //
+          // }, function error(error) {
+          //     console.log('error')
+          //     console.log(error)
+          //
+          // });
 
 
         }
       }
     }
   ])
-  .controller('MainCtrl', ['$scope', 'instagram',
-    function ($scope, instagram) {
+
+  .controller('MainCtrl', ['$scope', 'instagram', 'JobRetreiver',
+    function ($scope, instagram, JobRetreiver) {
 
       $scope.data = {};
       $scope.pics = [];
 
+      // Autocomplete test
+      // $scope.jobs = JobRetreiver.getjobs("...");
+      //   $scope.jobs.then(function(data){
+      //     $scope.jobs = data;
+      //   });
+      //
+      // $scope.getjobs = function(){
+      //   return $scope.jobs;
+      // }
+
+      // Instagram Feed
       instagram.fetchFeed(function(data) {
 
         console.log('data')
