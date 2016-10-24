@@ -54,8 +54,8 @@ angular.module('cornerCodeChallengeApp')
     }
   ])
 
-  .controller('MainCtrl', ['$scope', 'instagram', 'JobRetreiver',
-    function ($scope, instagram, JobRetreiver) {
+  .controller('MainCtrl', ['$scope', 'instagram',
+    function ($scope, instagram) {
 
       $scope.data = {};
       $scope.pics = [];
