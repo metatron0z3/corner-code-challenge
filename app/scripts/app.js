@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name test1App
+ * @name cornerCodeChallengeApp
  * @description
- * # test1App
+ * # cornerCodeChallengeApp
  *
  * Main module of the application.
  */
 angular
-  .module('test1App', [
+  .module('cornerCodeChallengeApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
