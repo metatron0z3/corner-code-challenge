@@ -54,6 +54,39 @@ angular.module('cornerCodeChallengeApp')
     }
   ])
 
+  // .factory('JobRetreiver', ['$http', '$q', '$timeout', function($http, $q, $timeout){
+  //   var JobRetreiver = new Object();
+  //
+  //   JobRetreiver.getjobs = function(i) {
+  //     var jobData = $q.defer();
+  //     var jobs;
+  //
+  //     var AvailableJobs = [
+  //       "Accounting Associate",
+  //       "Accounting Manager",
+  //       "Accounting Director",
+  //       "Beta Tester",
+  //       "Budget Analyst",
+  //       "Copy Editor",
+  //       "Director of HR",
+  //       "Education Counselor",
+  //       "Frontend Engineer",
+  //       "Software Engineer"
+  //     ];
+  //
+  //       jobs=AvailableJobs;
+  //
+  //
+  //     $timeout(function(){
+  //       jobData.resolve(jobs);
+  //     },1000);
+  //
+  //     return jobData.promise
+  //   }
+  //
+  //   return JobRetreiver;
+  // }])
+
   .controller('MainCtrl', ['$scope', 'instagram', 'JobRetreiver',
     function ($scope, instagram, JobRetreiver) {
 
