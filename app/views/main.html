@@ -1,0 +1,121 @@
+<!-- <div class="container flex-column"  > -->
+
+
+  <div class="search flex-row">
+      <div class="searchbox">
+        <span class="icon"><img src="images/search.png" alt="" /></span>
+        <input type="search" class="search" placeholder="My Perfect Job is..." />
+      </div>
+  </div>
+
+  <div class="main bg-container flex-column">
+
+    <div class="tagline">
+      <h1>REALIZE<span class="ital">YOUR</span><br />POTENTIAL</h1>
+    </div>
+    <div class="sub-heading">
+      <h2>Cloud-Based Applications to Recruit, Train, Manage,<br />And Connect People Across Your Organization</h2>
+    </div>
+
+    <div class="heroes flex-row">
+
+      <div class="hero hero-one flex-column">
+
+        <div class="image-container">
+          <img src="images/hero-one.png" alt="" width="300px;" />
+        </div>
+        <div class="quote-wrapper">
+          <div class="quote">Smart, cool and <br /> ready to prove it</div>
+          <div class="name-title">Khoa, Lead Product Manager</div>
+          <div class="icon"><img src="images/quote.png" alt=""  /></div>
+        </div>
+
+      </div>
+      <div class="hero hero-two flex-column">
+
+        <div class="quote-wrapper center">
+          <div class="icon center"><img src="images/quote.png" alt="" /></div>
+          <div class="quote">It's a New Day <br /> Learn Something</div>
+          <div class="name-title">Alyssa, Sales Manager</div>
+
+        </div>
+
+        <div class="image-container">
+          <img src="images/hero-two.png" alt="" width="300px;" />
+        </div>
+      </div>
+      <div class="hero hero-three flex-column">
+
+        <div class="image-container">
+          <img src="images/hero-three.png" alt="" width="300px;" />
+        </div>
+        <div class="quote-wrapper">
+          <div class="quote">We're Growing Fast <br /> and so can you</div>
+          <div class="name-title">Ravin, Director of Development</div>
+          <div class="icon"><img src="images/quote.png" alt="" /></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="partners flex-row">
+    <img src="images/logo-1.png" alt="" />
+    <img src="images/logo-2.png" alt="" />
+    <img src="images/logo-3.png" alt="" />
+  </div>
+  <div class="culture flex-row">
+    <div class="text ">
+      <div class="heading">
+        <h1>THE CULTURE</h1>
+      </div>
+      <div class="chapter">
+        <h2>Perks of a Lifetime</h2>
+      </div>
+      <div class="verse">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+
+    </div>
+    <div class="images flex-column">
+      <div class="bigger-image">
+        <img src="images/bigger.png" alt="" width="600px;" height="400px;" />
+      </div>
+      <div class="smaller-images flex-row">
+        <img src="images/smaller-1.png" alt="" />
+        <img src="images/smaller-2.png" alt=""   />
+      </div>
+
+
+    </div>
+
+
+  </div>
+  <div class="feed flex-column">
+    <div class="text">
+      <h1>OUR CULTURE</h1>
+      <h2>A Family Named Cornerstone</h2>
+    </div>
+
+
+
+    <div class="instagram-feed">
+
+      <div class="row">
+
+        {{ pics }}
+        
+		    <div ng-repeat="p in pics " class="pic">
+
+			       <a href="{{p.link}}" target="_blank"><img ng-src="{{p.images.low_resolution.url}}" class="" title="{{p.caption.text}}"></a>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+<!-- </div> -->
