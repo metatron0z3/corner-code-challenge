@@ -68,7 +68,13 @@ body {
         color: #fff;
         padding-left: 75px;
         // padding-bottom: 25px;
+
       }
+
+      input:focus{
+          outline: none;
+      }
+
 
       input::-webkit-input-placeholder {
         color: white;

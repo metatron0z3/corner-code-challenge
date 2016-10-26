@@ -22,11 +22,13 @@ angular.module('cornerCodeChallengeApp')
         $scope.data = {};
         $scope.pics = [];
 
-        var endPoint = 'https://www.instagram.com/joincornerstone/media'  ;
+        var endPoint = 'https://www.instagram.com/joincornerstone/media';
 
         $sce.trustAsResourceUrl(endPoint);
 
-        $http.jsonp(endPoint, {param: {jsonpCallbackParam: 'angular.callbacks._0'}})
+        $http.jsonp(
+          endPoint,
+          {param: {jsonpCallbackParam: 'angular.callbacks._0'}})
         .then(function(response) {
           console.log('response')
           console.log(response)
@@ -36,8 +38,8 @@ angular.module('cornerCodeChallengeApp')
           console.log('response.data')
           console.log(response.data)
         })
-        .catch(function(xhr, status, err) {
-          console.error(xhr,status, err);
+        .catch(function(xhr) {
+          console.error(xhr);
         });
 
       }
